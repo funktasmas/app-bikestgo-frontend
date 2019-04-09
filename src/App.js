@@ -36,6 +36,12 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  error: {
+    padding: 50,
+    backgroundColor: '#ff5e57',
+    color: 'white',
+    textAlign: 'center',
   }
 };
 const pagination = paginationFactory({
@@ -208,7 +214,7 @@ class App extends Component {
     const { stations, error, series_radial, series_line, options_radial, options_line, total_empty_slots, total_free_bikes, total_bike, loading } = this.state;
 
     if (error) {
-      return <p>{error.message}</p>;
+      return <h4 style={styles.error}>Error al obtener información.<br/>Intente en unos minutos más.</h4>;
     }
     return (
       <div>
